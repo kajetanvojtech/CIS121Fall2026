@@ -10,6 +10,6 @@ cin >> fname;
 cout << "Enter your last name: ";
 cin >> lname;
 
-cout << "Hello " <<fname<<" "<<lname<<"!"<<endl;
+cout << "Hello " <<fname<<" "<<lname<<endl;
 return 0;
 }
