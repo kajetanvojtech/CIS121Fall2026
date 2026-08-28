@@ -1,0 +1,22 @@
+# include<iostream>
+using namespace std;
+
+int main () {
+    int num1;
+    int num2;
+    int num3;
+    int sum; 
+
+    cout << "Enter the first integer: ";
+    cin >> num1;
+    cout << "Enter the second integer: ";
+    cin >> num2;
+    cout << "Enter the third integer: ";
+    cin >> num3;
+
+    sum = (num1 + num2) * num3;
+
+    cout << "The result is: "<<sum<<"."<<endl;
+
+return 0;
+}
