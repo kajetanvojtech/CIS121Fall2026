@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float price, discountpercent, discountamount, discountedprice;
+
+    // Input
+    cout << "Enter price: $";
+    cin >> price;
+
+    cout << "Enter discount percent as a decimal: ";
+    cin >> discountpercent;
+
+    // Process
+    discountamount = price * discountpercent;
+    discountedprice = price - discountamount;
+
+    // Output
+    cout << "Discount amount: $" << discountamount << endl;
+    cout << "Discounted price: $" << discountedprice << endl;
+
+    return 0;
+}
