@@ -2,25 +2,25 @@
 using namespace std;
 
 int main() {
-    string lastName;
-    double hours, payRate, grossPay;
+    string lastname;
+    float hours, payrate, grosspay;
 
     // Input
     cout << "Enter last name: ";
-    cin >> lastName;
+    cin >> lastname;
 
     cout << "Enter hours worked: ";
     cin >> hours;
 
     cout << "Enter pay rate: $";
-    cin >> payRate;
+    cin >> payrate;
 
     // Process
-    grossPay = hours * payRate;
+    grosspay = hours * payrate;
 
     // Output
-    cout << "Last name: " << lastName << endl;
-    cout << "Gross pay: $" << grossPay << endl;
+    cout << "Last name: " << lastname << endl;
+    cout << "Gross pay: $" << grosspay << endl;
 
     return 0;
 }
