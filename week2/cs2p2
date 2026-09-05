@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string lastName;
+    double hours, payRate, grossPay;
+
+    // Input
+    cout << "Enter last name: ";
+    cin >> lastName;
+
+    cout << "Enter hours worked: ";
+    cin >> hours;
+
+    cout << "Enter pay rate: $";
+    cin >> payRate;
+
+    // Process
+    grossPay = hours * payRate;
+
+    // Output
+    cout << "Last name: " << lastName << endl;
+    cout << "Gross pay: $" << grossPay << endl;
+
+    return 0;
+}
