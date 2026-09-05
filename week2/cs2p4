@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string lastname;
+    int credits;
+    float tuition;
+
+    // Input
+    cout << "Enter last name: ";
+    cin >> lastname;
+
+    cout << "Enter credits taken: ";
+    cin >> credits;
+
+    // Process
+    tuition = credits * 250 + 100;
+
+    // Output
+    cout << "Last name: " << lastname << endl;
+    cout << "Tuition: $" << tuition << endl;
+
+    return 0;
+}
