@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float fixedcosts, priceperunit, costperunit, breakeven;
+
+    cout << "Enter fixed costs: ";
+    cin >> fixedcosts;
+
+    cout << "Enter price per unit: ";
+    cin >> priceperunit;
+
+    cout << "Enter cost per unit: ";
+    cin >> costperunit;
+
+    breakeven = fixedcosts / (priceperunit - costperunit);
+
+    cout << "Break even point: " << breakeven << " units" << endl;
+
+    return 0;
+}
