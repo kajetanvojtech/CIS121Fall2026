@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float purchaseprice, currentprice, change, percentchange;
+
+    cout << "Enter purchase price: ";
+    cin >> purchaseprice;
+
+    cout << "Enter current price: ";
+    cin >> currentprice;
+
+    change = currentprice - purchaseprice;
+    percentchange = (change / purchaseprice) * 100;
+
+    cout << "Percentage increase or decrease: " << percentchange << "%" << endl;
+
+    return 0;
+}
