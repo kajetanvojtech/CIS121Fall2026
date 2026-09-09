@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float stockprice, currentvalue;
+    int quantity;
+
+    cout << "Enter current stock price: ";
+    cin >> stockprice;
+
+    cout << "Enter quantity of stock: ";
+    cin >> quantity;
+
+    currentvalue = stockprice * quantity;
+
+    cout << "Current value of stock: $" << currentvalue << endl;
+
+    return 0;
+}
