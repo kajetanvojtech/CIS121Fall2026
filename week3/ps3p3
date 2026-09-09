@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float total, tip, totalwithtip;
+
+    cout << "Enter meal total: ";
+    cin >> total;
+
+    tip = total * 0.15;
+    totalwithtip = total + tip;
+
+    cout << "Meal total: $" << total << endl;
+    cout << "Tip: $" << tip << endl;
+    cout << "Total with tip: $" << totalwithtip << endl;
+
+    return 0;
+}
