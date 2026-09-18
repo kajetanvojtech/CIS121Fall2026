@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char item;
+    int quantity;
+    float unitprice, extendedprice;
+
+    cout << "Enter item A or B: ";
+    cin >> item;
+
+    cout << "Enter quantity: ";
+    cin >> quantity;
+
+    if (item == 'A')
+        unitprice = 10.00;
+    else
+        unitprice = 20.00;
+
+    extendedprice = quantity * unitprice;
+
+    cout << "Item: " << item << endl;
+    cout << "Unit price: $" << unitprice << endl;
+    cout << "Extended price: $" << extendedprice << endl;
+
+    return 0;
+}
