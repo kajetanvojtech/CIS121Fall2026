@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int books;
+    float costperbook, ordertotal, shipping;
+
+    cout << "Enter number of books: ";
+    cin >> books;
+
+    cout << "Enter cost per book: ";
+    cin >> costperbook;
+
+    ordertotal = books * costperbook;
+
+    if (ordertotal > 50.00)
+        shipping = 0;
+    else
+        shipping = 25.00;
+
+    cout << "Order total: $" << ordertotal << endl;
+    cout << "Shipping: $" << shipping << endl;
+
+    return 0;
+}
