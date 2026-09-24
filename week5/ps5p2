@@ -1,0 +1,25 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double pounds, price, total;
+
+    cout << "Enter pounds: ";
+    cin >> pounds;
+
+    if (pounds > 100)
+        price = 0.10;
+    else if (pounds >= 50)
+        price = 0.25;
+    else
+        price = 0.50;
+
+    total = pounds * price;
+
+    cout << "Price Per Pound: $" << price << endl;
+    cout << "Total: $" << total << endl;
+
+    return 0;
+}
