@@ -1,0 +1,26 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double salary, taxrate, taxamount;
+
+    cout << "Enter annual salary: ";
+    cin >> salary;
+
+    if (salary > 100000)
+        taxrate = 0.40;
+    else if (salary >= 50000)
+        taxrate = 0.35;
+    else
+        taxrate = 0.25;
+
+    taxamount = salary * taxrate;
+
+    cout << "Salary: $" << salary << endl;
+    cout << "Tax Rate: " << taxrate * 100 << "%" << endl;
+    cout << "Tax Amount: $" << taxamount << endl;
+
+    return 0;
+}
