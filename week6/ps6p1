@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int quantity;
+    char status;
+    double price, extendedprice, tax, total;
+
+    cout << "Enter quantity: ";
+    cin >> quantity;
+
+    cout << "Enter status: ";
+    cin >> status;
+
+    if (quantity > 10000)
+    {
+        if (status == 'A')
+            price = 10;
+        else if (status == 'B')
+            price = 12;
+        else
+            price = 30;
+    }
+    else if (quantity >= 5000)
+    {
+        if (status == 'C')
+            price = 20;
+        else if (status == 'D')
+            price = 22;
+        else
+            price = 30;
+    }
+    else
+        price = 30;
+
+    extendedprice = quantity * price;
+    tax = extendedprice * .07;
+    total = extendedprice + tax;
+
+    cout << "Extended price: $" << extendedprice << endl;
+    cout << "Tax: $" << tax << endl;
+    cout << "Total: $" << total << endl;
+
+    return 0;
+}
