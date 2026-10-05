@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int tickets;
+    char location;
+    double price, total;
+
+    cout << "Enter number of tickets: ";
+    cin >> tickets;
+
+    cout << "Enter location code: ";
+    cin >> location;
+
+    if (tickets > 25 || location == 'H')
+        price = 30;
+    else if (tickets > 10 || location == 'L')
+        price = 40;
+    else
+        price = 50;
+
+    total = tickets * price;
+
+    cout << "Tickets: " << tickets << endl;
+    cout << "Price per ticket: $" << price << endl;
+    cout << "Total: $" << total << endl;
+
+    return 0;
+}
