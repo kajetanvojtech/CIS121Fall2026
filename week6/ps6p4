@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char equipment, day;
+    double cost;
+
+    cout << "Enter equipment code: ";
+    cin >> equipment;
+
+    cout << "Enter day code: ";
+    cin >> day;
+
+    if (equipment == 'A' && day == 'F')
+        cost = 10;
+    else if (equipment == 'A' && day == 'H')
+        cost = 15;
+    else if (equipment == 'B' && day == 'F')
+        cost = 20;
+    else if (equipment == 'B' && day == 'H')
+        cost = 35;
+    else if (equipment == 'C' && day == 'H')
+        cost = 40;
+    else if (equipment == 'C' && day == 'F')
+        cost = 45;
+    else
+        cost = 50;
+
+    cout << "Rental cost: $" << cost << endl;
+
+    return 0;
+}
