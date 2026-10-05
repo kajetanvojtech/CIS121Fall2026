@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char jobcode;
+    double hours, rate, grosspay;
+
+    cout << "Enter job code: ";
+    cin >> jobcode;
+
+    cout << "Enter hours: ";
+    cin >> hours;
+
+    if (jobcode == 'L')
+    {
+        if (hours > 40)
+            rate = 50;
+        else
+            rate = 40;
+    }
+    else if (jobcode == 'J')
+    {
+        if (hours > 60)
+            rate = 100;
+        else
+            rate = 75;
+    }
+    else if (jobcode == 'A')
+    {
+        if (hours > 40)
+            rate = 25;
+        else
+            rate = 20;
+    }
+
+    grosspay = hours * rate;
+
+    cout << "Gross pay: $" << grosspay << endl;
+
+    return 0;
+}
