@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char lastname[50], districtcode;
+    int credits, totalcredits = 0, count = 0;
+    float rate, tuition, totaltuition = 0;
+
+    while (cin >> lastname >> credits >> districtcode)
+    {
+        rate = 0;
+
+        if (districtcode == 'I')
+            rate = 250;
+        else if (districtcode == 'O')
+            rate = 550;
+
+        tuition = credits * rate;
+        totaltuition = totaltuition + tuition;
+        totalcredits = totalcredits + credits;
+        count = count + 1;
+
+        cout << "Last Name: " << lastname << endl;
+        cout << "Tuition Owed: " << tuition << endl;
+    }
+
+    cout << "Total Tuition: " << totaltuition << endl;
+    cout << "Total Credit Hours: " << totalcredits << endl;
+    cout << "Total Students: " << count << endl;
+
+    return 0;
+}
