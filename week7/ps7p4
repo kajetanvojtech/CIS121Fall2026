@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char lastname[50], jobcode;
+    float hours, rate, pay, totalpay = 0, average;
+    int count = 0;
+
+    while (cin >> lastname >> jobcode >> hours)
+    {
+        rate = 0;
+
+        if (jobcode == 'L')
+            rate = 25;
+        else if (jobcode == 'A')
+            rate = 30;
+        else if (jobcode == 'J')
+            rate = 50;
+
+        if (hours > 40)
+            pay = 40 * rate + (hours - 40) * rate * 1.5;
+        else
+            pay = hours * rate;
+
+        totalpay = totalpay + pay;
+        count = count + 1;
+
+        cout << "Last Name: " << lastname << endl;
+        cout << "Job Code: " << jobcode << endl;
+        cout << "Hours Worked: " << hours << endl;
+        cout << "Pay: " << pay << endl;
+    }
+
+    if (count > 0)
+    {
+        average = totalpay / count;
+        cout << "Average Pay: " << average << endl;
+    }
+
+    cout << "Total Employees: " << count << endl;
+
+    return 0;
+}
