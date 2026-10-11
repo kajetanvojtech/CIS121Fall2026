@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char city[50];
+    float miles, gallons, mpg, totalmiles = 0;
+    int count = 0;
+
+    while (cin >> city >> miles >> gallons)
+    {
+        mpg = miles / gallons;
+        totalmiles = totalmiles + miles;
+        count = count + 1;
+
+        cout << "Destination City: " << city << endl;
+        cout << "Miles Per Gallon: " << mpg << endl;
+    }
+
+    cout << "Total Miles: " << totalmiles << endl;
+    cout << "Total Trips: " << count << endl;
+
+    return 0;
+}
