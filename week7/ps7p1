@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int quantity;
+    float price, extended, discount, discounted, total = 0;
+
+    while (cin >> quantity >> price)
+    {
+        extended = quantity * price;
+        discount = 0;
+
+        if (quantity > 1000)
+        {
+            discount = extended * 0.10;
+        }
+
+        discounted = extended - discount;
+        total = total + discounted;
+
+        cout << "Quantity: " << quantity << endl;
+        cout << "Price: " << price << endl;
+        cout << "Extended Price: " << extended << endl;
+        cout << "Discount: " << discount << endl;
+        cout << "Discounted Price: " << discounted << endl;
+    }
+
+    cout << "Total Discounted Prices: " << total << endl;
+
+    return 0;
+}
