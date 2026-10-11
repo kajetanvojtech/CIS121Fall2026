@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char lastname[50];
+    int hits, atbats, count = 0;
+    float average;
+
+    while (cin >> lastname >> hits >> atbats)
+    {
+        average = (float)hits / atbats;
+        count = count + 1;
+
+        cout << "Last Name: " << lastname << endl;
+        cout << "Batting Average: " << average << endl;
+    }
+
+    cout << "Total Players: " << count << endl;
+
+    return 0;
+}
