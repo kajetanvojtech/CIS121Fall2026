@@ -1,1 +1,32 @@
 
+#include <iostream>
+using namespace std;
+
+double tuition(int credits)
+{
+    return credits * 250;
+}
+
+int main()
+{
+    char lastname[50];
+    int credits, count = 0;
+    double amount, total = 0;
+
+    while (cin >> lastname >> credits)
+    {
+        amount = tuition(credits);
+
+        cout << "Last name: " << lastname << endl;
+        cout << "Credits: " << credits << endl;
+        cout << "Tuition: $" << amount << endl;
+
+        total = total + amount;
+        count++;
+    }
+
+    cout << "Total tuition: $" << total << endl;
+    cout << "Students: " << count << endl;
+
+    return 0;
+}
