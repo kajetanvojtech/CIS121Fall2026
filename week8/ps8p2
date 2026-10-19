@@ -1,1 +1,45 @@
 
+#include <iostream>
+using namespace std;
+
+double pay(char job, double hours)
+{
+    double rate = 0;
+
+    if (job == 'L')
+        rate = 25;
+    else if (job == 'A')
+        rate = 30;
+    else if (job == 'J')
+        rate = 50;
+
+    if (hours > 40)
+        return 40 * rate + (hours - 40) * rate * 1.5;
+    else
+        return hours * rate;
+}
+
+int main()
+{
+    char lastname[50], job;
+    double hours, amount, total = 0;
+    int count = 0;
+
+    while (cin >> lastname >> job >> hours)
+    {
+        amount = pay(job, hours);
+
+        cout << "Last name: " << lastname << endl;
+        cout << "Pay: $" << amount << endl;
+
+        total = total + amount;
+        count++;
+    }
+
+    if (count > 0)
+        cout << "Average pay: $" << total / count << endl;
+
+    cout << "Employees: " << count << endl;
+
+    return 0;
+}
