@@ -1,1 +1,56 @@
 
+#include <iostream>
+using namespace std;
+
+double price(char code)
+{
+    if (code == 'W')
+        return 10;
+    else if (code == 'C')
+        return 15;
+    else if (code == 'G')
+        return 20;
+
+    return 0;
+}
+
+double shipping(char code)
+{
+    if (code == 'W')
+        return 2;
+    else if (code == 'C')
+        return 5;
+    else if (code == 'G')
+        return 7;
+
+    return 0;
+}
+
+int main()
+{
+    char code;
+    int quantity;
+    double unitprice, ship, extended, total;
+    double grandtotal = 0;
+
+    while (cin >> code >> quantity)
+    {
+        unitprice = price(code);
+        ship = shipping(code);
+        extended = quantity * unitprice;
+        total = extended + ship;
+
+        cout << "Code: " << code << endl;
+        cout << "Unit price: $" << unitprice << endl;
+        cout << "Shipping: $" << ship << endl;
+        cout << "Extended price: $" << extended << endl;
+        cout << "Total: $" << total << endl;
+
+        grandtotal = grandtotal + total;
+    }
+
+    cout << "Grand total: $" << grandtotal << endl;
+
+    return 0;
+}
+
