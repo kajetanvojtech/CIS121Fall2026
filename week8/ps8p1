@@ -1,1 +1,32 @@
 
+#include <iostream>
+using namespace std;
+
+double mpg(double miles, double gallons)
+{
+    return miles / gallons;
+}
+
+int main()
+{
+    char city[50];
+    double miles, gallons, totalmiles = 0;
+    int count = 0;
+
+    while (cin >> city >> miles >> gallons)
+    {
+        if (gallons > 0)
+        {
+            cout << "City: " << city << endl;
+            cout << "MPG: " << mpg(miles, gallons) << endl;
+
+            totalmiles = totalmiles + miles;
+            count++;
+        }
+    }
+
+    cout << "Total miles: " << totalmiles << endl;
+    cout << "Trips: " << count << endl;
+
+    return 0;
+}
