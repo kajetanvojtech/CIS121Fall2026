@@ -1,1 +1,36 @@
 
+#include <iostream>
+using namespace std;
+
+double totalCost(int quantity, double price) {
+    return quantity * price;
+}
+
+double discountCost(double total) {
+    if (total > 10000)
+        return total * 0.90;
+    else
+        return total * 0.95;
+}
+
+int main() {
+    int quantity;
+    double price, total, discounted;
+    double sumTotal = 0, sumDiscount = 0;
+
+    while (cin >> quantity >> price) {
+        total = totalCost(quantity, price);
+        discounted = discountCost(total);
+
+        cout << "Total: $" << total << endl;
+        cout << "Discount Total: $" << discounted << endl;
+
+        sumTotal += total;
+        sumDiscount += discounted;
+    }
+
+    cout << "Sum Total: $" << sumTotal << endl;
+    cout << "Sum Discount Total: $" << sumDiscount << endl;
+
+    return 0;
+}
