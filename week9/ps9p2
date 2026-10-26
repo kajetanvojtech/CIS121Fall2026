@@ -1,1 +1,28 @@
 
+#include <iostream>
+using namespace std;
+
+double battingAverage(double hits, double atBats) {
+    return atBats / hits;
+}
+
+int main() {
+    char lastName[50];
+    double hits, atBats;
+    int count = 0;
+
+    while (cin >> lastName >> hits >> atBats) {
+        if (hits == 0)
+            cout << lastName << " Average: Undefined" << endl;
+        else
+            cout << lastName << " Average: "
+                 << battingAverage(hits, atBats) << endl;
+
+        count++;
+    }
+
+    cout << "Total Players: " << count << endl;
+
+    return 0;
+}
+
