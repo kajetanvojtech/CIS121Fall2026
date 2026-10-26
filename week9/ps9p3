@@ -1,1 +1,35 @@
 
+#include <iostream>
+using namespace std;
+
+double milesPerGallon(double miles, double gallons) {
+    return miles / gallons;
+}
+
+double gasCost(double gallons) {
+    return gallons * 3.50;
+}
+
+int main() {
+    char city[50];
+    double miles, gallons, cost;
+    double totalCost = 0;
+
+    while (cin >> city >> miles >> gallons) {
+        cost = gasCost(gallons);
+
+        cout << "City: " << city << endl;
+
+        if (gallons != 0)
+            cout << "MPG: " << milesPerGallon(miles, gallons) << endl;
+
+        cout << "Gas Cost: $" << cost << endl;
+
+        totalCost += cost;
+    }
+
+    cout << "Total Gas Cost: $" << totalCost << endl;
+
+    return 0;
+}
+
