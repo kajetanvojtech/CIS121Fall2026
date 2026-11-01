@@ -1,1 +1,35 @@
 
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void calculate(double investment, double rate5, double rate10,
+               double &amount5, double &amount10)
+{
+    amount5 = investment * pow(1 + rate5, 5);
+    amount10 = investment * pow(1 + rate10, 10);
+}
+
+int main()
+{
+    double investment, rate5, rate10;
+    double amount5, amount10;
+
+    cout << "Enter investment, 5 year rate, and 10 year rate (Ctrl+Z to stop): ";
+    cin >> investment >> rate5 >> rate10;
+
+    while (!cin.eof())
+    {
+        calculate(investment, rate5, rate10, amount5, amount10);
+
+        cout << "Investment: $" << investment << endl;
+        cout << "5 Year Amount: $" << amount5 << endl;
+        cout << "10 Year Amount: $" << amount10 << endl;
+
+        cout << "Enter investment, 5 year rate, and 10 year rate: ";
+        cin >> investment >> rate5 >> rate10;
+    }
+
+    return 0;
+}
+
