@@ -1,1 +1,41 @@
 
+#include <iostream>
+using namespace std;
+
+void calculate(int quantity, double price, double &total,
+               double &tax, double &total_order)
+{
+    total = quantity * price;
+    tax = total * 0.07;
+    total_order = total + tax;
+}
+
+int main()
+{
+    int quantity;
+    double price, total, tax, total_order;
+    double all_orders = 0, all_tax = 0;
+
+    cout << "Enter quantity and price (Ctrl+Z to stop): ";
+    cin >> quantity >> price;
+
+    while (!cin.eof())
+    {
+        calculate(quantity, price, total, tax, total_order);
+
+        cout << "Total: $" << total << endl;
+        cout << "Tax: $" << tax << endl;
+        cout << "Total Order: $" << total_order << endl;
+
+        all_orders = all_orders + total_order;
+        all_tax = all_tax + tax;
+
+        cout << "Enter quantity and price: ";
+        cin >> quantity >> price;
+    }
+
+    cout << "Total of All Orders: $" << all_orders << endl;
+    cout << "Total Tax: $" << all_tax << endl;
+
+    return 0;
+}
