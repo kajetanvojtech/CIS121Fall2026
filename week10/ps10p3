@@ -1,1 +1,47 @@
 
+#include <iostream>
+#include <string>
+using namespace std;
+
+void calculate(int credit_hours, double financial_aid,
+               double &tuition, double &tuition_owed)
+{
+    tuition = credit_hours * 250;
+    tuition_owed = tuition - financial_aid;
+}
+
+int main()
+{
+    string lname;
+    int credit_hours, count = 0;
+    double financial_aid, tuition, tuition_owed;
+    double total_owed = 0, average_owed = 0;
+
+    cout << "Enter last name, credit hours, and financial aid (Ctrl+Z to stop): ";
+    cin >> lname >> credit_hours >> financial_aid;
+
+    while (!cin.eof())
+    {
+        calculate(credit_hours, financial_aid, tuition, tuition_owed);
+
+        cout << "Last Name: " << lname << endl;
+        cout << "Tuition: $" << tuition << endl;
+        cout << "Tuition Owed: $" << tuition_owed << endl;
+
+        total_owed = total_owed + tuition_owed;
+        count = count + 1;
+
+        cout << "Enter last name, credit hours, and financial aid: ";
+        cin >> lname >> credit_hours >> financial_aid;
+    }
+
+    if (count > 0)
+        average_owed = total_owed / count;
+
+    cout << "Total Tuition Owed: $" << total_owed << endl;
+    cout << "Number of Students: " << count << endl;
+    cout << "Average Amount Owed: $" << average_owed << endl;
+
+    return 0;
+}
+
