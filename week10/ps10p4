@@ -1,1 +1,51 @@
 
+
+#include <iostream>
+using namespace std;
+
+void calculate(int widgets, double &cost_per_widget,
+               double &extended_price, double &sales_tax,
+               double &total_order)
+{
+    if (widgets >= 10000)
+        cost_per_widget = 4.00;
+    else if (widgets >= 5000)
+        cost_per_widget = 5.00;
+    else
+        cost_per_widget = 10.00;
+
+    extended_price = widgets * cost_per_widget;
+    sales_tax = extended_price * 0.07;
+    total_order = extended_price + sales_tax;
+}
+
+int main()
+{
+    int widgets;
+    double cost_per_widget, extended_price, sales_tax, total_order;
+    double all_orders = 0;
+
+    cout << "Enter number of widgets (Ctrl+Z to stop): ";
+    cin >> widgets;
+
+    while (!cin.eof())
+    {
+        calculate(widgets, cost_per_widget, extended_price,
+                  sales_tax, total_order);
+
+        cout << "Widgets: " << widgets << endl;
+        cout << "Cost Per Widget: $" << cost_per_widget << endl;
+        cout << "Extended Price: $" << extended_price << endl;
+        cout << "Sales Tax: $" << sales_tax << endl;
+        cout << "Total Order: $" << total_order << endl;
+
+        all_orders = all_orders + total_order;
+
+        cout << "Enter number of widgets: ";
+        cin >> widgets;
+    }
+
+    cout << "Total of All Orders: $" << all_orders << endl;
+
+    return 0;
+}
