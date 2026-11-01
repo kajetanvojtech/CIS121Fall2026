@@ -1,1 +1,57 @@
 
+#include <iostream>
+using namespace std;
+
+void calculate(double weight, int zip, double &postage,
+               double &area_charge, double &weight_charge)
+{
+    double rate;
+
+    if (weight > 100)
+        rate = 0.02;
+    else if (weight > 50)
+        rate = 0.03;
+    else
+        rate = 0.05;
+
+    weight_charge = weight * rate;
+
+    if (zip == 60171)
+        area_charge = 2.00;
+    else if (zip == 60172)
+        area_charge = 2.50;
+    else if (zip == 60635)
+        area_charge = 3.00;
+    else
+        area_charge = 5.00;
+
+    postage = area_charge + weight_charge;
+}
+
+int main()
+{
+    double weight, postage, area_charge, weight_charge;
+    int zip, count = 0;
+
+    cout << "Enter weight and zip code (Ctrl+Z to stop): ";
+    cin >> weight >> zip;
+
+    while (!cin.eof())
+    {
+        calculate(weight, zip, postage, area_charge, weight_charge);
+
+        cout << "Area Charge: $" << area_charge << endl;
+        cout << "Weight Charge: $" << weight_charge << endl;
+        cout << "Postage: $" << postage << endl;
+
+        count = count + 1;
+
+        cout << "Enter weight and zip code: ";
+        cin >> weight >> zip;
+    }
+
+    cout << "Number of Entries: " << count << endl;
+
+    return 0;
+}
+
