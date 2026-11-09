@@ -1,1 +1,37 @@
 
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+void calculate(double msrp, double price, double &savings, double &tax)
+{
+    savings = msrp - price;
+    tax = price * 0.07;
+}
+
+int main()
+{
+    ifstream file("auto.txt");
+    string make, model;
+    double msrp, price, savings, tax;
+    double totalsavings = 0;
+
+    while (file >> make >> model >> msrp >> price)
+    {
+        calculate(msrp, price, savings, tax);
+
+        cout << make << " " << model << endl;
+        cout << "MSRP: " << msrp << endl;
+        cout << "Sales Price: " << price << endl;
+        cout << "Savings: " << savings << endl;
+        cout << "Sales Tax: " << tax << endl;
+
+        totalsavings += savings;
+    }
+
+    cout << "Total Savings: " << totalsavings << endl;
+
+    file.close();
+    return 0;
+}
