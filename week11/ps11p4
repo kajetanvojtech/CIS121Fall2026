@@ -1,1 +1,43 @@
 
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+double calculate(double salary)
+{
+    return salary / 26;
+}
+
+int main()
+{
+    ifstream file("empl.txt");
+    string lastname;
+    double salary, biweekly;
+    double totalsalary = 0, average;
+    int count = 0;
+
+    while (file >> lastname >> salary)
+    {
+        biweekly = calculate(salary);
+
+        cout << "Last Name: " << lastname << endl;
+        cout << "Annual Salary: " << salary << endl;
+        cout << "Biweekly Pay: " << biweekly << endl;
+
+        totalsalary += salary;
+        count++;
+    }
+
+    if (count > 0)
+        average = totalsalary / count;
+    else
+        average = 0;
+
+    cout << "Total Salary: " << totalsalary << endl;
+    cout << "Employee Count: " << count << endl;
+    cout << "Average Salary: " << average << endl;
+
+    file.close();
+    return 0;
+}
+
