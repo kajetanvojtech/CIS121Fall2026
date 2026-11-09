@@ -1,1 +1,60 @@
 
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+void calculate(char code, double credits, double &tuition, double &fees)
+{
+    double cost;
+
+    if (code == 'I')
+        cost = 250;
+    else
+        cost = 500;
+
+    tuition = credits * cost;
+    fees = tuition * 0.10;
+}
+
+int main()
+{
+    ifstream file("student.txt");
+    string lastname;
+    char code;
+    double credits, tuition, fees, cost;
+    double totaltuition = 0, average;
+    int count = 0;
+
+    while (file >> lastname >> code >> credits)
+    {
+        calculate(code, credits, tuition, fees);
+
+        if (code == 'I')
+            cost = 250;
+        else
+            cost = 500;
+
+        cout << "Last Name: " << lastname << endl;
+        cout << "Student Code: " << code << endl;
+        cout << "Cost Per Credit: " << cost << endl;
+        cout << "Credits: " << credits << endl;
+        cout << "Tuition: " << tuition << endl;
+        cout << "Course Fees: " << fees << endl;
+
+        totaltuition += tuition;
+        count++;
+    }
+
+    if (count > 0)
+        average = totaltuition / count;
+    else
+        average = 0;
+
+    cout << "Total Tuition: " << totaltuition << endl;
+    cout << "Student Count: " << count << endl;
+    cout << "Average Tuition: " << average << endl;
+
+    file.close();
+    return 0;
+}
+
