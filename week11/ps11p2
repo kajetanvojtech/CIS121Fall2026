@@ -1,1 +1,41 @@
 
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+double calculate(int quantity, double price)
+{
+    return quantity * price;
+}
+
+int main()
+{
+    ifstream file("grocery.txt");
+    string item;
+    int quantity;
+    double price, extended;
+    double total = 0, tax, receipt;
+
+    while (file >> item >> quantity >> price)
+    {
+        extended = calculate(quantity, price);
+
+        cout << item << endl;
+        cout << "Quantity: " << quantity << endl;
+        cout << "Price: " << price << endl;
+        cout << "Extended Price: " << extended << endl;
+
+        total += extended;
+    }
+
+    tax = total * 0.07;
+    receipt = total + tax;
+
+    cout << "Total: " << total << endl;
+    cout << "Tax: " << tax << endl;
+    cout << "Total Receipt: " << receipt << endl;
+
+    file.close();
+    return 0;
+}
+
