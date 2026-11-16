@@ -1,0 +1,40 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+void loadarrays(string first[], string last[], double gpa[]) {
+    ifstream file("students.txt");
+
+    for (int i = 0; i < 10; i++) {
+        file >> first[i] >> last[i] >> gpa[i];
+    }
+    file.close();
+}
+
+void displayarrays(string first[], string last[], double gpa[]) {
+    for (int i = 0; i < 10; i++) {
+        cout << first[i] << " " << last[i] << " " << gpa[i] << endl;
+    }
+}
+
+void reversearrays(string first[], string last[], double gpa[]) {
+    for (int i = 9; i >= 0; i--) {
+        cout << first[i] << " " << last[i] << " " << gpa[i] << endl;
+    }
+}
+
+int main() {
+    string first[10], last[10];
+    double gpa[10];
+
+    loadarrays(first, last, gpa);
+
+    cout << "Student List:" << endl;
+    displayarrays(first, last, gpa);
+
+    cout << "\nReverse List:" << endl;
+    reversearrays(first, last, gpa);
+
+    return 0;
+}
