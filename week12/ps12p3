@@ -1,0 +1,55 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+void loadarrays(string first[], string last[], double salary[]) {
+    ifstream file("empldata.txt");
+
+    for (int i = 0; i < 10; i++) {
+        file >> first[i] >> last[i] >> salary[i];
+    }
+    file.close();
+}
+
+void displayarrays(string first[], string last[], double salary[]) {
+    for (int i = 0; i < 10; i++) {
+        cout << first[i] << " " << last[i] << " " << salary[i] << endl;
+    }
+}
+
+void seqsearcharrays(string first[], string last[],
+                     double salary[], string search) {
+    bool found = false;
+
+    for (int i = 0; i < 10; i++) {
+        if (last[i] == search) {
+            cout << first[i] << " " << last[i]
+                 << " " << salary[i] << endl;
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << search << " not found" << endl;
+    }
+}
+
+int main() {
+    string first[10], last[10], search;
+    double salary[10];
+
+    loadarrays(first, last, salary);
+    displayarrays(first, last, salary);
+
+    cout << "Enter last name, ctl+z to stop: ";
+
+    while (cin >> search) {
+        seqsearcharrays(first, last, salary, search);
+        cout << "Enter last name, ctl+z to stop: ";
+    }
+
+    cout << "Goodbye. Have a nice day." << endl;
+
+    return 0;
+}
