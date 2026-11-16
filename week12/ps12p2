@@ -1,0 +1,55 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+void loadarrays(string city[], int population[]) {
+    ifstream file("cities.txt");
+
+    for (int i = 0; i < 8; i++) {
+        file >> city[i] >> population[i];
+    }
+    file.close();
+}
+
+void displayarrays(string city[], int population[]) {
+    for (int i = 0; i < 8; i++) {
+        cout << city[i] << " " << population[i] << endl;
+    }
+}
+
+void seqsearcharrays(string city[], int population[], string search) {
+    bool found = false;
+
+    for (int i = 0; i < 8; i++) {
+        if (city[i] == search) {
+            cout << city[i] << " has a population of "
+                 << population[i] << endl;
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        cout << search << " not found" << endl;
+    }
+}
+
+int main() {
+    string city[8], search;
+    int population[8];
+
+    loadarrays(city, population);
+    displayarrays(city, population);
+
+    cout << "Enter city name, ctl+z to stop: ";
+
+    while (cin >> search) {
+        seqsearcharrays(city, population, search);
+        cout << "Enter city name, ctl+z to stop: ";
+    }
+
+    cout << "Goodbye. Have a nice day." << endl;
+
+    return 0;
+}
